@@ -30,13 +30,14 @@ public class restaurantRegister extends AppCompatActivity {
                 String user=benutzername.getText().toString();
                 String pass=kennwort.getText().toString();
                 String repass=rekennwort.getText().toString();
-                int geheim= Integer.parseInt(geheim1.getText().toString());
-                if(user.equals("")||pass.equals("")||repass.equals(""))
+              String geheim= geheim1.getText().toString();
+                if(user.equals("")||pass.equals("")||repass.equals("")||geheim.equals("") )
                     Toast.makeText(restaurantRegister.this, "Bitte alle Felder ausfuellen",Toast.LENGTH_SHORT).show();
                 else{
                     if(pass.equals(repass)){
                         boolean checkuser = DB.checkBenutzername(user);
-                        if(checkuser==false && geheim==12345 ){
+                        int geheim1 = Integer.parseInt(geheim);
+                        if(checkuser==false && geheim1==12345 ){
                             boolean insert= DB.insertData(user,pass);
                             if(insert==true){
                                 Toast.makeText(restaurantRegister.this, "Registrierung erfolgreich",Toast.LENGTH_SHORT).show();
