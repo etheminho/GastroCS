@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".restaurantAnmelden"></activity>
+        <activity android:name=".restaurantHome"></activity>
+        <activity android:name=".restaurantRegister" />
+        <activity android:name=".kundeHome" />
+        <activity android:name=".kundeRegister" />
+        <activity android:name=".restaurantAnmelden" />
         <activity android:name=".kundeAnmelden" />
         <activity android:name=".MainActivity">
             <intent-filter>

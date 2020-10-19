@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".restaurantAnmelden">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+    android:id="@+id/benutzername2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Benutzername"
+    android:layout_marginTop="50dp"/>
+    <EditText
+        android:id="@+id/kennwort2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kennwort"
+        android:inputType="textPassword"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/benutzername2"/>
+
+
+
+    <Button
+        android:id="@+id/anmeldebtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Anmelden"
+        android:layout_below="@id/kennwort2"/>
+
+    <Button
+        android:id="@+id/registerbtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Oder Registriren"
+        android:layout_below="@id/anmeldebtn2"/>
+
+
+
+
+</RelativeLayout>

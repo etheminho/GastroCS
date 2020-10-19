@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".restaurantHome">
+
+    <Button
+        android:id="@+id/admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Sie sind als Admin angemeldet" />
+    <Button
+        android:id="@+id/gerichtHinzufuegen"
+        android:layout_width="match_parent"
+        android:layout_below="@id/admin"
+        android:layout_height="wrap_content"
+        android:text="Gericht Hinzufuegen" />
+
+
+    <Button
+        android:id="@+id/besucher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gerichtHinzufuegen"
+        android:layout_margin="1dp"
+        android:text="Besucher" />
+
+
+    <Button
+        android:id="@+id/verkauf"
+        android:text="Verkauf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/besucher"
+        android:layout_margin="1dp" />
+
+    <Button
+        android:id="@+id/mitarbeiterverwalten"
+        android:text="Mitarbeiter verwalten"
+        android:layout_width="match_parent"
+        android:layout_below="@id/verkauf"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+
+        />
+
+    <Button
+        android:id="@+id/emailschreiben"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mitarbeiterverwalten"
+        android:layout_margin="1dp"
+        android:text="E-Mail schreiben" />
+
+    <Button
+        android:id="@+id/restaurantbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailschreiben"
+        android:layout_margin="1dp"
+        android:text="Bestellendes Essen" />
+
+</RelativeLayout>

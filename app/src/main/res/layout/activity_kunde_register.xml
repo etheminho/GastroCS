@@ -4,38 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kundeAnmelden">
+    tools:context=".kundeRegister">
 
     <EditText
-        android:id="@+id/benutzername2"
+        android:id="@+id/benutzername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Benutzername"
         android:layout_marginTop="50dp"/>
     <EditText
-        android:id="@+id/kennwort2"
+        android:id="@+id/kennwort"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Kennwort"
         android:inputType="textPassword"
         android:layout_marginTop="50dp"
-        android:layout_below="@id/benutzername2"/>
+        android:layout_below="@id/benutzername"/>
+
+    <EditText
+        android:id="@+id/kennwortwiederholen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kennwort Wiederholen"
+        android:inputType="textPassword"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/kennwort"/>
 
     <Button
-        android:id="@+id/anmeldebtn2"
+        android:id="@+id/anmeldebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/kennwortwiederholen"/>
+    <Button
+        android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Anmelden"
-        android:layout_below="@id/kennwort2"/>
+        android:text="Sie haben ein Konto, dann anmelden!"
+        android:layout_below="@id/anmeldebtn"/>
 
-    <Button
-        android:id="@+id/registerbtn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Oder Registriren"
-        android:layout_below="@id/anmeldebtn2"/>
+
 
 
 </RelativeLayout>
