@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".restaurantHome"></activity>
+        <activity android:name=".emailAnschreiben"></activity>
+        <activity android:name=".restaurantHome" />
         <activity android:name=".restaurantRegister" />
         <activity android:name=".kundeHome" />
         <activity android:name=".kundeRegister" />
