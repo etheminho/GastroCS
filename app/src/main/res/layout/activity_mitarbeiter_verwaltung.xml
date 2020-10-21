@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mitarbeiterVerwaltung">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mitarbeiterverwaltung"
+        android:textSize="24dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:hint="Name"
+        android:layout_below="@id/title"
+        android:inputType="text"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:id="@+id/abteilung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp" android:hint="Abteilung"
+        android:layout_below="@id/name"
+        android:inputType="text"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:id="@+id/gbdatum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp" android:hint="Geburtsdatum"
+        android:layout_below="@id/abteilung"
+        android:inputType="date"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/emailAdresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp" android:hint="E-Mail Adresse"
+        android:layout_below="@id/gbdatum"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/insertBtn"
+        android:text="hinzufügen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailAdresse"
+        android:layout_marginTop="1dp"/>
+    <Button
+        android:id="@+id/bearbeitenBtn"
+        android:text="bearbeiten"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insertBtn"
+        android:layout_marginTop="1dp"/>
+    <Button
+        android:id="@+id/showBtn"
+        android:text="auflisten"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bearbeitenBtn"
+        android:layout_marginTop="1dp"/>
+    <Button
+        android:id="@+id/deleteBtn"
+        android:text="löschen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showBtn"
+        android:layout_marginTop="1dp"/>
+    <Button
+        android:id="@+id/sucheBtn"
+        android:text="Suchen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deleteBtn"
+        android:layout_marginTop="1dp"/>
+</RelativeLayout>
