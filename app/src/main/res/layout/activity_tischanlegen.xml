@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tischanlegen">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tisch Hinzufügen!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/anzpltz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:requiresFadingEdge=""
+        android:hint="Anzahl der Plätze"
+        android:layout_below="@id/title"
+        android:inputType="number"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/reiheX"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp" android:hint="X-Koordinate"
+        android:layout_below="@id/anzpltz"
+        android:inputType="number"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/reiheY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp" android:hint="Y-Koordinate"
+        android:layout_below="@id/reiheX"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/insertBtn"
+        android:text="hinzufügen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reiheY"
+        android:layout_marginTop="1dp"/>
+
+    <Button
+        android:id="@+id/showBtn"
+        android:text="Auflisten"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insertBtn"
+        android:layout_marginTop="1dp"/>
+    <Button
+        android:id="@+id/deleteBtn"
+        android:text="Tisch löschen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showBtn"
+        android:layout_marginTop="1dp"/>
+
+    <Button
+        android:id="@+id/deleteallBtn"
+        android:text="alle Tische löschen"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deleteBtn"
+        android:layout_marginTop="1dp"/>
+
+
+
+</RelativeLayout>

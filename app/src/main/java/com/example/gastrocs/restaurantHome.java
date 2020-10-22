@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class restaurantHome extends AppCompatActivity {
-    Button emailBtn, maVerwaltungBtn;
+    Button emailBtn, maVerwaltungBtn, tischAnlegen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_home);
+        tischAnlegen=findViewById(R.id.tischanlegen);
         emailBtn= findViewById(R.id.emailschreiben);
         maVerwaltungBtn=findViewById(R.id.mitarbeiterverwalten);
         emailBtn.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +27,13 @@ public class restaurantHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), mitarbeiterVerwaltung.class);
+                startActivity(intent);
+            }
+        });
+        tischAnlegen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), Tischanlegen.class);
                 startActivity(intent);
             }
         });

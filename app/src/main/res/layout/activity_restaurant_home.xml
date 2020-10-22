@@ -21,12 +21,12 @@
 
 
     <Button
-        android:id="@+id/besucher"
+        android:id="@+id/tischanlegen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gerichtHinzufuegen"
         android:layout_margin="1dp"
-        android:text="Besucher" />
+        android:text="Tisch Anlegen" />
 
 
     <Button
@@ -34,7 +34,7 @@
         android:text="Verkauf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/besucher"
+        android:layout_below="@id/tischanlegen"
         android:layout_margin="1dp" />
 
     <Button
