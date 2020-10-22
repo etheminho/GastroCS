@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class restaurantHome extends AppCompatActivity {
-    Button emailBtn, maVerwaltungBtn, tischAnlegen;
+    Button emailBtn, maVerwaltungBtn, tischAnlegenBtn, gerichtAnlegenBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_home);
-        tischAnlegen=findViewById(R.id.tischanlegen);
+        tischAnlegenBtn=findViewById(R.id.tischanlegen);
         emailBtn= findViewById(R.id.emailschreiben);
         maVerwaltungBtn=findViewById(R.id.mitarbeiterverwalten);
+        gerichtAnlegenBtn=findViewById(R.id.gerichtHinzufuegen);
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,10 +31,17 @@ public class restaurantHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        tischAnlegen.setOnClickListener(new View.OnClickListener() {
+        tischAnlegenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), Tischanlegen.class);
+                Intent intent=new Intent(getApplicationContext(), TischHinzufuegen.class);
+                startActivity(intent);
+            }
+        });
+        gerichtAnlegenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), GerichtAnlegen.class);
                 startActivity(intent);
             }
         });

@@ -8,9 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DBHelperTischeAnlegen extends SQLiteOpenHelper {
-    public DBHelperTischeAnlegen(@Nullable Context context) {
-        super(context, "tischeAnlegen.db", null, 1);
+public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
+    public DBHelperTischHinzufuegen(@Nullable Context context) {
+        super(context, "tischHinzufuegen1.db", null, 1);
     }
 
     @Override
