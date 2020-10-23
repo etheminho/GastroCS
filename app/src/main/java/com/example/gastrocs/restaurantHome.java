@@ -47,6 +47,14 @@ public class restaurantHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       speiseKarteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), GerichtListe.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

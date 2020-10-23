@@ -43,5 +43,22 @@ public class DBHelperGerichtAnlegen extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+    public boolean deleteDaten(String name, String preis){
+        SQLiteDatabase DB= this.getWritableDatabase();
+
+
+        Cursor cs=DB.rawQuery("Delete from Gericht  where name=? and preis=?",new String[]{name, preis});
+        if(cs.getCount()>0){
+
+
+            long erg=DB.delete("Gericht", "name=? and preis=?", new String[]{name, preis});
+            if(erg==-1){
+                return  false;}
+            else{
+                return true;
+            }
+        }else{
+            return false;
+        }}
 }
 

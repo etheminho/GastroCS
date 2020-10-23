@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
 
-    android:layout_width="250dp" android:layout_height="250dp"
-    tools:context=".SpeiseKarteRestaurant">
-
+    android:layout_width="250dp" android:layout_height="250dp">
 
     <ImageView
         android:id="@+id/imgFoodElemente"
@@ -37,13 +34,5 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@id/gerichtName"/>
-    <Button
-        android:id="@+id/deleteGericht"
-        android:layout_width="90dp"
-        android:layout_height="40dp"
-        android:text="Delete"
-        android:layout_below="@id/gerichtPreis"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        />
+
 </RelativeLayout>

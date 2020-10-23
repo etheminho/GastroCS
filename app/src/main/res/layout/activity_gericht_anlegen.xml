@@ -62,4 +62,15 @@
         android:text="Hinzufügen" />
 
 
+
+    <Button
+        android:id="@+id/deleteButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@id/addButton"
+        android:text="Delete" />
+
+
+
 </RelativeLayout>

@@ -25,18 +25,19 @@ import java.io.InputStream;
 
 public class GerichtAnlegen extends AppCompatActivity {
     EditText nameTxt, preisTxt;
-    Button showBtn, waehlenBtn, addBtn;
+    Button showBtn, waehlenBtn, addBtn, deleteBtn;
     ImageView imgView;
-    final int code = 999;
     public static DBHelperGerichtAnlegen dbhelper;
+    final int code = 999;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gericht_anlegen);
         init();
-        dbhelper = new DBHelperGerichtAnlegen(this, "gerichtAnlegen.sqlite", null, 1);
-        dbhelper.queryDaten("CREATE TABLE IF NOT EXISTS Gericht (id INTEGER, name Text, preis Text, image BLOB)");
+        dbhelper = new DBHelperGerichtAnlegen(this, "gerichtAnlegen.db", null, 1);
+        dbhelper.queryDaten("CREATE TABLE IF NOT EXISTS Gericht (id INTEGER, name VARCHAR, preis VARCHAR, image BLG)");
         waehlenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +49,20 @@ public class GerichtAnlegen extends AppCompatActivity {
             }
         });
 
+    deleteBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String name=nameTxt.getText().toString();
+            String preis=preisTxt.getText().toString();
+            boolean checkerDelete=dbhelper.deleteDaten(name,preis);
+            if(checkerDelete==true){
+                Toast.makeText(GerichtAnlegen.this,"Daten wurden erfolgreich geloescht",Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(GerichtAnlegen.this,"Daten wurden erfolgreich geloescht",Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,9 +130,10 @@ public class GerichtAnlegen extends AppCompatActivity {
     private void init() {
         nameTxt = findViewById(R.id.name);
         preisTxt = findViewById(R.id.preis);
-
+        deleteBtn=findViewById(R.id.deleteButton1);
         waehlenBtn = findViewById(R.id.imgWaehlen);
         imgView = findViewById(R.id.gerichtFoto);
         addBtn = findViewById(R.id.addButton);
+
     }
 }
