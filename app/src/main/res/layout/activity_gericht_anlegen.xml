@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GerichtAnlegen">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gericht Hinzufügen"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Name"
+        android:layout_below="@id/title"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/preis"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Preis/€"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/name"/>
+
+    <ImageView
+        android:id="@+id/gerichtFoto"
+        android:minWidth="200dp"
+        android:minHeight="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/preis"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+    <Button
+        android:id="@+id/imgWaehlen"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_below="@id/gerichtFoto"
+        android:text="Foto Auswählen" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@id/imgWaehlen"
+        android:text="Hinzufügen" />
+
+
+</RelativeLayout>
