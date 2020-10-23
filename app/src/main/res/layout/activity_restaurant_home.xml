@@ -30,8 +30,8 @@
 
 
     <Button
-        android:id="@+id/verkauf"
-        android:text="Verkauf"
+        android:id="@+id/speisekarte"
+        android:text="Speisekarte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tischanlegen"
@@ -41,7 +41,7 @@
         android:id="@+id/mitarbeiterverwalten"
         android:text="Mitarbeiter verwalten"
         android:layout_width="match_parent"
-        android:layout_below="@id/verkauf"
+        android:layout_below="@id/speisekarte"
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
 

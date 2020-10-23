@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gastrocs">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    package="com.example.gastrocs"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".TischHinzufuegen"></activity>
-        <activity android:name=".GerichtAnlegen" />
-        <activity android:name=".mitarbeiterVerwaltung" />
-        <activity android:name=".emailAnschreiben" />
-        <activity android:name=".restaurantHome" />
-        <activity android:name=".restaurantRegister" />
-        <activity android:name=".kundeHome" />
-        <activity android:name=".kundeRegister" />
-        <activity android:name=".restaurantAnmelden" />
-        <activity android:name=".kundeAnmelden" />
-        <activity android:name=".MainActivity">
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.gastrocs.TischHinzufuegen" />
+        <activity android:name="com.example.gastrocs.GerichtAnlegen" />
+        <activity android:name="com.example.gastrocs.mitarbeiterVerwaltung" />
+        <activity android:name="com.example.gastrocs.emailAnschreiben" />
+        <activity android:name="com.example.gastrocs.restaurantHome" />
+        <activity android:name="com.example.gastrocs.restaurantRegister" />
+        <activity android:name="com.example.gastrocs.kundeHome" />
+        <activity android:name="com.example.gastrocs.kundeRegister" />
+        <activity android:name="com.example.gastrocs.restaurantAnmelden" />
+        <activity android:name="com.example.gastrocs.kundeAnmelden" />
+        <activity android:name="com.example.gastrocs.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

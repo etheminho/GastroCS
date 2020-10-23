@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class restaurantHome extends AppCompatActivity {
-    Button emailBtn, maVerwaltungBtn, tischAnlegenBtn, gerichtAnlegenBtn;
+    Button emailBtn, maVerwaltungBtn, tischAnlegenBtn, gerichtAnlegenBtn, speiseKarteBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +17,7 @@ public class restaurantHome extends AppCompatActivity {
         emailBtn= findViewById(R.id.emailschreiben);
         maVerwaltungBtn=findViewById(R.id.mitarbeiterverwalten);
         gerichtAnlegenBtn=findViewById(R.id.gerichtHinzufuegen);
+        speiseKarteBtn=findViewById(R.id.speisekarte);
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,6 +25,7 @@ public class restaurantHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         maVerwaltungBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,5 +47,6 @@ public class restaurantHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
