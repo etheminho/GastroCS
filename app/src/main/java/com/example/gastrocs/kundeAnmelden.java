@@ -46,8 +46,11 @@ public class kundeAnmelden extends AppCompatActivity {
                         Toast.makeText(kundeAnmelden.this, "Anmeldung erfolgreich",Toast.LENGTH_SHORT).show();
                         Intent intent= new Intent(getApplicationContext(),kundeHome.class);
                         startActivity(intent);
+                        benutzername.setText("");
+                        kennwort.setText("");
                     }else{
                         Toast.makeText(kundeAnmelden.this, "Anmeldung fehlgeschlagen",Toast.LENGTH_SHORT).show();
+                        kennwort.setText("");
                     }
 
                 }

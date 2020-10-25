@@ -43,8 +43,11 @@ public class restaurantAnmelden extends AppCompatActivity {
                             Toast.makeText(restaurantAnmelden.this, "Anmeldung erfolgreich",Toast.LENGTH_SHORT).show();
                             Intent intent= new Intent(getApplicationContext(),restaurantHome.class);
                             startActivity(intent);
+                            benutzername.setText("");
+                            kennwort.setText("");
                         }else{
                             Toast.makeText(restaurantAnmelden.this, "Anmeldung fehlgeschlagen",Toast.LENGTH_SHORT).show();
+                            kennwort.setText("");
                         }
 
                     }

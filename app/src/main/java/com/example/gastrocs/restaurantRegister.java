@@ -43,6 +43,11 @@ public class restaurantRegister extends AppCompatActivity {
                                 Toast.makeText(restaurantRegister.this, "Registrierung erfolgreich",Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(getApplicationContext(),restaurantHome.class);
                                 startActivity(intent);
+                                benutzername.setText("");
+                                kennwort.setText("");
+                                rekennwort.setText("");
+
+
                             }
                             else{
                                 Toast.makeText(restaurantRegister.this, "Registrierung fehlgeschlagen", Toast.LENGTH_SHORT);

@@ -42,6 +42,9 @@ public class kundeRegister extends AppCompatActivity {
                                 Toast.makeText(kundeRegister.this, "Registrierung erfolgreich",Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(getApplicationContext(),kundeHome.class);
                                 startActivity(intent);
+                                benutzername.setText("");
+                                kennwort.setText("");
+                                rekennwort.setText("");
                             }
                             else{
                                 Toast.makeText(kundeRegister.this, "Registrierung fehlgeschlagen",Toast.LENGTH_SHORT).show();
