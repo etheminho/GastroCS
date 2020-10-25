@@ -28,7 +28,7 @@ public class restaurantAnmelden extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                counter--;
+
                 if(counter<1){
                     Toast.makeText(restaurantAnmelden.this, "Sie haben die Anazahl der erlaubten Versuche ueberschritten!",Toast.LENGTH_SHORT).show();
                     return;
@@ -45,7 +45,9 @@ public class restaurantAnmelden extends AppCompatActivity {
                             startActivity(intent);
                             benutzername.setText("");
                             kennwort.setText("");
+                            counter=3;
                         }else{
+                            counter--;
                             Toast.makeText(restaurantAnmelden.this, "Anmeldung fehlgeschlagen",Toast.LENGTH_SHORT).show();
                             kennwort.setText("");
                         }

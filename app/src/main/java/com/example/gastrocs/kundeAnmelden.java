@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class kundeAnmelden extends AppCompatActivity {
     EditText benutzername, kennwort;
     Button anmeldebtn, registerbtn;
-    DBHelper DB;
+    DBHelperKunde DB;
     int counter=3;
 
     @Override
@@ -23,13 +23,12 @@ public class kundeAnmelden extends AppCompatActivity {
         kennwort= (EditText) findViewById(R.id.kennwort2);
         anmeldebtn= (Button) findViewById(R.id.anmeldebtn2);
         registerbtn= (Button) findViewById(R.id.registerbtn2);
-        DB= new DBHelper(this);
+        DB= new DBHelperKunde(this);
         this.counter=counter;
         anmeldebtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                counter--;
                 if(counter<1){
                     Toast.makeText(kundeAnmelden.this, "Sie haben die Anazahl der erlaubten Versuche ueberschritten!",Toast.LENGTH_SHORT).show();
 
@@ -48,7 +47,9 @@ public class kundeAnmelden extends AppCompatActivity {
                         startActivity(intent);
                         benutzername.setText("");
                         kennwort.setText("");
+                        counter=3;
                     }else{
+                        counter--;
                         Toast.makeText(kundeAnmelden.this, "Anmeldung fehlgeschlagen",Toast.LENGTH_SHORT).show();
                         kennwort.setText("");
                     }

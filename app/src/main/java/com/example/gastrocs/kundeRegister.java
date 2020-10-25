@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class kundeRegister extends AppCompatActivity {
     EditText benutzername,kennwort,rekennwort;
     Button registerbtn, anmeldebtn;
-    DBHelper DB;
+    DBHelperKunde DB;
 
 
     @Override
@@ -24,7 +24,7 @@ public class kundeRegister extends AppCompatActivity {
         rekennwort= (EditText) findViewById(R.id.kennwortwiederholen);
         anmeldebtn= (Button) findViewById(R.id.anmeldebtn);
         registerbtn= (Button) findViewById(R.id.registerbtn);
-        DB = new DBHelper(this);
+        DB = new DBHelperKunde(this);
         anmeldebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
