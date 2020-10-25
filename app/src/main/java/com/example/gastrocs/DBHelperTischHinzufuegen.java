@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 
 public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
     public DBHelperTischHinzufuegen(@Nullable Context context) {
-        super(context, "tischHinzufuegen1.db", null, 1);
+        super(context, "tischAnlegenCS.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("CREATE  TABLE Tisch (platzAnz TEXT, laenge INTEGER, reiheX TEXT, reiheY TEXT, PRIMARY KEY(reiheX, reiheY) )");
+        DB.execSQL("CREATE  TABLE Tisch (id INTEGER PRIMARY KEY AUTOINCREMENT,platzAnz TEXT, laenge INTEGER, reiheX TEXT)");
 
     }
 
@@ -24,13 +24,12 @@ public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
         DB.execSQL("DROP TABLE IF EXISTS Tisch");
 
     }
-    public boolean insertDaten(int platzAnz, int laenge,  String reiheX, String reiheY){
+    public boolean insertDaten(int platzAnz, int laenge,  String reiheX){
         SQLiteDatabase DB= this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put("platzAnz", platzAnz);
         cv.put("laenge", laenge);
         cv.put("reiheX", reiheX);
-        cv.put("reiheY", reiheY);
         long erg=DB.insert("Tisch",null,cv);
         if(erg==-1){
             return  false;}
@@ -39,15 +38,15 @@ public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deleteEinenTisch(String reiheX, String reiheY){
+    public boolean deleteEinenTisch(String id){
         SQLiteDatabase DB= this.getWritableDatabase();
 
 
-        Cursor cs=DB.rawQuery("Delete from Tisch  where reiheX=? and reiheY=?",new String[]{reiheX, reiheY});
+        Cursor cs=DB.rawQuery("Delete from Tisch  where id=?",new String[]{id});
         if(cs.getCount()>0){
 
 
-            long erg=DB.delete("Tisch", "reiheX=? and reiheY=?", new String[]{reiheX, reiheY});
+            long erg=DB.delete("Tisch", "id=?", new String[]{id});
             if(erg==-1){
                 return  false;}
             else{
@@ -85,10 +84,10 @@ public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
     }
 
     //Suche nach Tischen in einer bestimmten Reihe
-    public Cursor sucheDaten(String reiheX) {
+    public Cursor sucheDaten(String id) {
         SQLiteDatabase DB = this.getWritableDatabase();
 
-        Cursor cs = DB.rawQuery("Select * from Tisch where reiheX=?", new String[]{reiheX});
+        Cursor cs = DB.rawQuery("Select * from Tisch where id=?", new String[]{id});
         return cs;
     }
 
