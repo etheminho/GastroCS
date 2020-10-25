@@ -41,7 +41,7 @@ public class restaurantRegister extends AppCompatActivity {
                             boolean insert= DB.insertData(user,pass);
                             if(insert==true){
                                 Toast.makeText(restaurantRegister.this, "Registrierung erfolgreich",Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(getApplicationContext(),restaurantHome.class);
+                                Intent intent=new Intent(getApplicationContext(),restaurantAnmelden.class);
                                 startActivity(intent);
                                 benutzername.setText("");
                                 kennwort.setText("");
