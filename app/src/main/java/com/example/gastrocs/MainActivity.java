@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 kundebtn.setBackgroundColor(Color.WHITE);
                 kundebtn.setTextColor(Color.BLACK);
+                restaurantbtn.setBackgroundColor(Color.GREEN);
+                restaurantbtn.setTextColor(Color.BLACK);
                 Intent intent=new Intent(getApplicationContext(),kundeAnmelden.class);
                 startActivity(intent);
 
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 restaurantbtn.setBackgroundColor(Color.WHITE);
                 restaurantbtn.setTextColor(Color.BLACK);
+                kundebtn.setBackgroundColor(Color.GREEN);
+                kundebtn.setTextColor(Color.BLACK);
                 Intent intent=new Intent(getApplicationContext(),restaurantAnmelden.class);
                 startActivity(intent);
 

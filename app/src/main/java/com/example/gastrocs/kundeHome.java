@@ -20,11 +20,15 @@ public class kundeHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kunde_home);
         coronaButton=findViewById(R.id.coronaBtn);
+        kundeAnmelden ob1=new kundeAnmelden();
+        Toast.makeText(kundeHome.this, "Angemeldeter Nutzer: "+ob1.session,Toast.LENGTH_SHORT).show();
         coronaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), CoronaZettel.class);
                 startActivity(intent);
+
+
             }
         });
 

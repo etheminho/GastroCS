@@ -15,6 +15,7 @@ public class kundeAnmelden extends AppCompatActivity {
     Button anmeldebtn, registerbtn;
     DBHelperKunde DB;
     int counter=3;
+    public static String session;
 
 
     @Override
@@ -47,6 +48,7 @@ public class kundeAnmelden extends AppCompatActivity {
                     if(checkuserpass==true){
 
                         Toast.makeText(kundeAnmelden.this, "Anmeldung erfolgreich",Toast.LENGTH_SHORT).show();
+                        session=user;
                         Intent intent= new Intent(getApplicationContext(),kundeHome.class);
                         startActivity(intent);
 

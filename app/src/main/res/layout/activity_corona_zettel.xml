@@ -11,13 +11,13 @@
         android:id="@+id/besucherName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="Name*"
         android:gravity="center"/>
     <EditText
         android:id="@+id/handynummer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Handynummer"
+        android:hint="Handynummer*"
         android:layout_below="@id/besucherName"
         android:gravity="center"/>
 
@@ -26,7 +26,7 @@
         android:id="@+id/plz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="PLZ"
+        android:hint="PLZ*"
         android:gravity="center"
         android:layout_below="@id/handynummer"/>
 
@@ -34,7 +34,7 @@
         android:id="@+id/stadt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Stadt"
+        android:hint="Stadt*"
         android:gravity="center"
         android:layout_below="@id/plz"/>
 
@@ -42,7 +42,7 @@
         android:id="@+id/strasse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Straße"
+        android:hint="Straße*"
         android:gravity="center"
         android:layout_below="@id/stadt"/>
 
@@ -50,51 +50,55 @@
         android:id="@+id/hausnr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hausnummer"
+        android:hint="Hausnummer*"
         android:gravity="center"
         android:layout_below="@id/strasse"/>
     <EditText
         android:id="@+id/sonstiges"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="Sonstiges"
-        android:gravity="center"
+        android:layout_height="180dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
         android:layout_below="@id/hausnr"/>
     <TextView
         android:id="@+id/frage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Leiden Sie unter Corona?"
-        android:textSize="22dp"
-        android:gravity="center"
+        android:hint="Leiden Sie unter Corona?*"
+        android:textSize="18dp"
+
         android:layout_below="@id/sonstiges"/>
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/rd"
-        android:gravity="center"
         android:layout_below="@id/frage">
         <RadioButton android:id="@+id/ja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ja"
-            android:textSize="20dp"
-            android:onClick="onRadioButtonClicked"/>
+            android:textSize="18dp"/>
         <RadioButton android:id="@+id/nein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nein"
-            android:textSize="20dp"
-            android:onClick="onRadioButtonClicked"/>
+            android:textSize="18dp"/>
     </RadioGroup>
+    <CheckBox android:id="@+id/agbCB"
+        android:layout_below="@+id/rd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AGB gelesen?*"
+        android:textSize="18dp"/>
     <Button
         android:id="@+id/submitButton"
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginLeft="150dp"
         android:text="Absenden"
-        android:layout_below="@id/rd"/>
+        android:layout_below="@id/agbCB"/>
 
 
 </RelativeLayout>
