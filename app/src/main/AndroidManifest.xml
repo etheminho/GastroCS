@@ -20,7 +20,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Besucher"></activity>
+        <activity android:name=".FeedbackLesen"></activity>
+        <activity android:name=".Feedback" />
+        <activity android:name=".Besucher" />
         <activity android:name=".CoronaZettel" />
         <activity android:name=".TischHinzufuegen" />
         <activity android:name=".GerichtAnlegen" />

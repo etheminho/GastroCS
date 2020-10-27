@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Feedback">
+    <TextView
+        android:id="@+id/danke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="VIELEN DANK FÜR IHRE BESTELLUNG"/>
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:foregroundGravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/danke"/>
+    <EditText
+        android:id="@+id/bemerkung"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="start|top"
+        android:hint="Feedback Schreiben"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/ratingBar"/>
+    <Button
+        android:id="@+id/feedbackSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abschicken"
+        android:layout_below="@id/bemerkung"/>
+
+</RelativeLayout>

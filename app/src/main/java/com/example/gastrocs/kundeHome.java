@@ -12,8 +12,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 public class kundeHome extends AppCompatActivity {
-        Button coronaButton;
-
+        Button coronaButton, feedbackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +20,7 @@ public class kundeHome extends AppCompatActivity {
         setContentView(R.layout.activity_kunde_home);
         coronaButton=findViewById(R.id.coronaBtn);
         kundeAnmelden ob1=new kundeAnmelden();
+        feedbackButton=findViewById(R.id.feedbackBtn);
         Toast.makeText(kundeHome.this, "Angemeldeter Nutzer: "+ob1.session,Toast.LENGTH_SHORT).show();
         coronaButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +31,15 @@ public class kundeHome extends AppCompatActivity {
 
             }
         });
+        feedbackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), Feedback.class);
+                startActivity(intent);
 
+
+            }
+        });
 
     }
 }
