@@ -56,11 +56,11 @@
         android:text="E-Mail schreiben" />
 
     <Button
-        android:id="@+id/restaurantbtn"
+        android:id="@+id/besucherButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailschreiben"
         android:layout_margin="1dp"
-        android:text="Bestellendes Essen" />
+        android:text="Besucher" />
 
 </RelativeLayout>

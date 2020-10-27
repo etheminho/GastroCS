@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class restaurantHome extends AppCompatActivity {
-    Button emailBtn, maVerwaltungBtn, tischAnlegenBtn, gerichtAnlegenBtn, speiseKarteBtn;
+
+    Button emailBtn, maVerwaltungBtn, tischAnlegenBtn, gerichtAnlegenBtn, speiseKarteBtn, besucherBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,7 @@ public class restaurantHome extends AppCompatActivity {
         emailBtn= findViewById(R.id.emailschreiben);
         maVerwaltungBtn=findViewById(R.id.mitarbeiterverwalten);
         gerichtAnlegenBtn=findViewById(R.id.gerichtHinzufuegen);
+        besucherBtn=findViewById(R.id.besucherButton);
         speiseKarteBtn=findViewById(R.id.speisekarte);
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,13 @@ public class restaurantHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       besucherBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(getApplicationContext(), Besucher.class);
+               startActivity(intent);
+           }
+       });
 
 
     }

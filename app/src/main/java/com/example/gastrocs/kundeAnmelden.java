@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class kundeAnmelden extends AppCompatActivity {
@@ -15,10 +16,12 @@ public class kundeAnmelden extends AppCompatActivity {
     DBHelperKunde DB;
     int counter=3;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kunde_anmelden);
+
         benutzername = (EditText) findViewById(R.id.benutzername2);
         kennwort= (EditText) findViewById(R.id.kennwort2);
         anmeldebtn= (Button) findViewById(R.id.anmeldebtn2);
@@ -42,9 +45,11 @@ public class kundeAnmelden extends AppCompatActivity {
                     boolean checkuserpass=DB.checkBenutzernameKennwort(user,pass);
 
                     if(checkuserpass==true){
+
                         Toast.makeText(kundeAnmelden.this, "Anmeldung erfolgreich",Toast.LENGTH_SHORT).show();
                         Intent intent= new Intent(getApplicationContext(),kundeHome.class);
                         startActivity(intent);
+
                         benutzername.setText("");
                         kennwort.setText("");
                         counter=3;

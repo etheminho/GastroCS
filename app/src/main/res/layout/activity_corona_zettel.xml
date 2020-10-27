@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoronaZettel">
+
+
+    <EditText
+        android:id="@+id/besucherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/handynummer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Handynummer"
+        android:layout_below="@id/besucherName"
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/plz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PLZ"
+        android:gravity="center"
+        android:layout_below="@id/handynummer"/>
+
+    <EditText
+        android:id="@+id/stadt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stadt"
+        android:gravity="center"
+        android:layout_below="@id/plz"/>
+
+    <EditText
+        android:id="@+id/strasse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Straße"
+        android:gravity="center"
+        android:layout_below="@id/stadt"/>
+
+    <EditText
+        android:id="@+id/hausnr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hausnummer"
+        android:gravity="center"
+        android:layout_below="@id/strasse"/>
+    <EditText
+        android:id="@+id/sonstiges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sonstiges"
+        android:gravity="center"
+        android:layout_below="@id/hausnr"/>
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:text="Absenden"
+        android:layout_below="@id/sonstiges"/>
+
+
+</RelativeLayout>

@@ -14,6 +14,7 @@ public class restaurantAnmelden extends AppCompatActivity {
     Button anmeldebtn, registerbtn;
     DBHelperRestaurant DB;
     int counter =3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,9 @@ public class restaurantAnmelden extends AppCompatActivity {
         kennwort= (EditText) findViewById(R.id.kennwort2);
         anmeldebtn= (Button) findViewById(R.id.anmeldebtn2);
         registerbtn= (Button) findViewById(R.id.registerbtn2);
+
+
+
         DB= new DBHelperRestaurant(this);
         this.counter=counter;
         anmeldebtn.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +45,8 @@ public class restaurantAnmelden extends AppCompatActivity {
                         boolean checkuserpass=DB.checkBenutzernameKennwort(user,pass);
                         if(checkuserpass==true){
                             Toast.makeText(restaurantAnmelden.this, "Anmeldung erfolgreich",Toast.LENGTH_SHORT).show();
+
+
                             Intent intent= new Intent(getApplicationContext(),restaurantHome.class);
                             startActivity(intent);
                             benutzername.setText("");

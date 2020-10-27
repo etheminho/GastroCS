@@ -20,6 +20,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Besucher"></activity>
+        <activity android:name=".CoronaZettel" />
         <activity android:name=".TischHinzufuegen" />
         <activity android:name=".GerichtAnlegen" />
         <activity android:name=".mitarbeiterVerwaltung" />
@@ -31,16 +33,16 @@
         <activity android:name=".restaurantAnmelden" />
         <activity android:name=".kundeAnmelden" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GerichtListe"
+        <activity
+            android:name=".GerichtListe"
             android:label="GERICHTLISTE"
-            android:parentActivityName=".GerichtAnlegen"/>
+            android:parentActivityName=".GerichtAnlegen" />
     </application>
 
 </manifest>
