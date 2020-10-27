@@ -35,6 +35,7 @@ public class Besucher extends AppCompatActivity {
                         stBf.append("Sonstiges: "+erg.getString(6)+"\n");
                         stBf.append("Am: "+erg.getString(7)+"\n");
                         stBf.append("Um: "+erg.getString(8)+"\n");
+                        stBf.append("Status: "+erg.getString(9)+"\n");
 
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -13,6 +14,7 @@ import java.util.Calendar;
 
 public class CoronaZettel extends AppCompatActivity {
     EditText nm,plz1,str,hsnr,stdt,sonst,handynr;
+    String corStatus="";
     Button submitBtn;
     DBHelperCoronaZettel DB;
 
@@ -45,11 +47,11 @@ public class CoronaZettel extends AppCompatActivity {
                 String strasseTxt = str.getText().toString();
                 String sonstTxt = sonst.getText().toString();
 
-                if (nameTxt.equals("") || telefonTxt.equals("") || hsnrTxt.equals("") || plzTxt.equals("")|| stdtTxt.equals("") || strasseTxt.equals("") || sonstTxt.equals("")) {
+                if (nameTxt.equals("") || telefonTxt.equals("") || hsnrTxt.equals("") || plzTxt.equals("")|| stdtTxt.equals("") || strasseTxt.equals("") || sonstTxt.equals("")||corStatus.equals("")) {
                     Toast.makeText(CoronaZettel.this, "Bitte alle Felder ausfuellen", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    boolean checkerInsert = DB.insertBesucher(nameTxt,telefonTxt ,plzTxt ,stdtTxt ,strasseTxt ,hsnrTxt,sonstTxt ,heute ,uhrzeit);
+                    boolean checkerInsert = DB.insertBesucher(nameTxt,telefonTxt ,plzTxt ,stdtTxt ,strasseTxt ,hsnrTxt,sonstTxt ,heute ,uhrzeit,corStatus);
                     if (checkerInsert == true) {
                         Toast.makeText(CoronaZettel.this, "Daten wurden erfolgreich hinzugefuegt", Toast.LENGTH_SHORT).show();
                     } else {
@@ -60,5 +62,22 @@ public class CoronaZettel extends AppCompatActivity {
         });
 
 
+
+    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.ja:
+                if (checked)
+                    corStatus="JA";
+                    break;
+            case R.id.nein:
+                if (checked)
+                    corStatus="NEIN";
+                    break;
+        }
     }
 }

@@ -60,13 +60,41 @@
         android:hint="Sonstiges"
         android:gravity="center"
         android:layout_below="@id/hausnr"/>
+    <TextView
+        android:id="@+id/frage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Waren Sie an Corona erkrankt?"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:layout_below="@id/sonstiges"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rd"
+        android:gravity="center"
+        android:layout_below="@id/frage">
+        <RadioButton android:id="@+id/ja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ja"
+            android:textSize="20dp"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/nein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nein"
+            android:textSize="20dp"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
     <Button
         android:id="@+id/submitButton"
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginLeft="150dp"
         android:text="Absenden"
-        android:layout_below="@id/sonstiges"/>
+        android:layout_below="@id/rd"/>
 
 
 </RelativeLayout>

@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 
 public class DBHelperCoronaZettel  extends SQLiteOpenHelper {
     public DBHelperCoronaZettel(@Nullable Context context) {
-        super(context, "coronadaten.db", null, 1);
+        super(context, "coronadat.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("CREATE  TABLE coronainfo (name TEXT, nr TEXT, plz TEXT,stadt TEXT,strasse TEXT,hausnummer TEXT, sonst TEXT, datum TEXT,zeit TEXT)");
+        DB.execSQL("CREATE  TABLE coronainfo (name TEXT, nr TEXT, plz TEXT,stadt TEXT,strasse TEXT,hausnummer TEXT, sonst TEXT, datum TEXT,zeit TEXT, status TEXT)");
 
     }
 
@@ -24,7 +24,7 @@ public class DBHelperCoronaZettel  extends SQLiteOpenHelper {
         DB.execSQL("DROP TABLE IF EXISTS coronainfo");
 
     }
-    public boolean insertBesucher(String bName,String nr,String plz,String stdt,String str,String hsnr,String sons,String dat,String zei){
+    public boolean insertBesucher(String bName,String nr,String plz,String stdt,String str,String hsnr,String sons,String dat,String zei, String statusc){
         SQLiteDatabase DB= this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put("name", bName);
@@ -36,6 +36,7 @@ public class DBHelperCoronaZettel  extends SQLiteOpenHelper {
         cv.put("sonst", sons);
         cv.put("datum", dat);
         cv.put("zeit", zei);
+        cv.put("status", statusc);
         long erg=DB.insert("coronainfo",null,cv);
         if(erg==-1){
             return  false;}
