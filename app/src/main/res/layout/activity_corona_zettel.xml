@@ -64,7 +64,7 @@
         android:id="@+id/frage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Waren Sie an Corona erkrankt?"
+        android:hint="Leiden Sie unter Corona?"
         android:textSize="22dp"
         android:gravity="center"
         android:layout_below="@id/sonstiges"/>

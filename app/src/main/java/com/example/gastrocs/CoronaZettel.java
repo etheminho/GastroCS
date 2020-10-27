@@ -51,11 +51,16 @@ public class CoronaZettel extends AppCompatActivity {
                     Toast.makeText(CoronaZettel.this, "Bitte alle Felder ausfuellen", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    if(corStatus.equals("nein")){
                     boolean checkerInsert = DB.insertBesucher(nameTxt,telefonTxt ,plzTxt ,stdtTxt ,strasseTxt ,hsnrTxt,sonstTxt ,heute ,uhrzeit,corStatus);
                     if (checkerInsert == true) {
-                        Toast.makeText(CoronaZettel.this, "Daten wurden erfolgreich hinzugefuegt", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CoronaZettel.this, "Gerne Können Sie bei uns bestellen!", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(CoronaZettel.this, "Fehler beim Hinzufuegen der Daten", Toast.LENGTH_SHORT).show();
+                    }}
+                    else{
+                        Toast.makeText(CoronaZettel.this, "Bleiben Sie bitte zu Hause!", Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }
@@ -72,11 +77,11 @@ public class CoronaZettel extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.ja:
                 if (checked)
-                    corStatus="JA";
+                    corStatus="ja";
                     break;
             case R.id.nein:
                 if (checked)
-                    corStatus="NEIN";
+                    corStatus="nein";
                     break;
         }
     }
