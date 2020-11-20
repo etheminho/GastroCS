@@ -84,10 +84,10 @@ public class DBHelperTischHinzufuegen extends SQLiteOpenHelper {
     }
 
     //Suche nach Tischen in einer bestimmten Reihe
-    public Cursor sucheDaten(String id) {
+    public Cursor sucheDaten(String reiheX) {
         SQLiteDatabase DB = this.getWritableDatabase();
 
-        Cursor cs = DB.rawQuery("Select * from Tisch where id=?", new String[]{id});
+        Cursor cs = DB.rawQuery("Select * from Tisch where reiheX=?", new String[]{reiheX});
         return cs;
     }
 
