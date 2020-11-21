@@ -51,12 +51,12 @@ public class TischHinzufuegen extends AppCompatActivity {
                     int rx=Integer.parseInt(reiheXTxt);
                     int plaetzeTxt1 =Integer.parseInt(plaetzeTxt);
                     if(rx>5||plaetzeTxt1>12||plaetzeTxt1<2){
-                        Toast.makeText(TischHinzufuegen.this, "Das Restaurant verfügt über 5 Reihen, Tisch darf zw.(2-12) groÃŸ sein!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TischHinzufuegen.this, "Das Restaurant verfügt über 5 Reihen, Tisch darf zw.(2-12) Peronen groß sein!", Toast.LENGTH_SHORT).show();
 
                     }
                     else{
-                        if(checkVerfuegbareFlaesche("1")==true||checkVerfuegbareFlaesche("2")==true ||checkVerfuegbareFlaesche("3")==true ||checkVerfuegbareFlaesche("4")==true ||checkVerfuegbareFlaesche("5")==true){
-                            Toast.makeText(TischHinzufuegen.this, "Nur 100 Personen dürfen max. im Restaurant sein, CORONA!", Toast.LENGTH_SHORT).show();
+                        if(checkVerfuegbareFlaesche(reiheXTxt)==true){
+                            Toast.makeText(TischHinzufuegen.this, "Nur 50 Personen dürfen max. in einer Reihe Sein sein, CORONA!", Toast.LENGTH_SHORT).show();
                         }else{
                             int laenge=plaetzeTxt1/2;
 
@@ -141,13 +141,13 @@ public class TischHinzufuegen extends AppCompatActivity {
     //daten checken
     public boolean checkVerfuegbareFlaesche(String reiheX){
         Cursor erg=DB.sucheDaten(reiheX);
-        int anz=0;
+        int anzPerson=0;
         while(erg.moveToNext()){
 
-            anz=anz+(Integer.parseInt(erg.getString(1)));
+            anzPerson=anzPerson+(Integer.parseInt(erg.getString(1)));
 
         }
-        if(anz>100){
+        if(anzPerson>=50){
             return true;
         }
         else{
