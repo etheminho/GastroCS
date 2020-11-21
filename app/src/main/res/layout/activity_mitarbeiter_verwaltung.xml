@@ -36,9 +36,9 @@
         android:id="@+id/gbdatum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp" android:hint="Geburtsdatum"
+        android:textSize="24dp" android:hint="Alter"
         android:layout_below="@id/abteilung"
-        android:inputType="date"
+        android:inputType="number"
         android:layout_marginTop="15dp"/>
 
     <EditText

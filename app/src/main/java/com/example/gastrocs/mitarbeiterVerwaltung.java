@@ -45,14 +45,16 @@ public class mitarbeiterVerwaltung extends AppCompatActivity {
                 if (nameTxt.equals("") || abteilungTxt.equals("") || emailTxt.equals("") || gdTxt.equals("")) {
                     Toast.makeText(mitarbeiterVerwaltung.this, "Bitte alle Felder ausfuellen", Toast.LENGTH_SHORT).show();
                 }
-                else{
+                else{ if(Integer.parseInt(gdTxt)>50){
+                    Toast.makeText(mitarbeiterVerwaltung.this, "Mitarbeiter gehört zu Risikogruppen", Toast.LENGTH_SHORT).show();
+                }else{
                     boolean checkerInsert = DB.insertDaten(nameTxt, abteilungTxt, gdTxt, emailTxt);
                     if (checkerInsert == true) {
                         Toast.makeText(mitarbeiterVerwaltung.this, "Daten wurden erfolgreich hinzugefuegt", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mitarbeiterVerwaltung.this, "Fehler beim Hinzufuegen der Daten", Toast.LENGTH_SHORT).show();
                     }
-                }
+                }}
             }
         });
         //update der Daten
@@ -102,7 +104,7 @@ public class mitarbeiterVerwaltung extends AppCompatActivity {
                         counter++;
                         stBf.append("Name: "+erg.getString(1)+"\n");
                         stBf.append("Abteilung: "+erg.getString(2)+"\n");
-                        stBf.append("Geburtsdatum: "+erg.getString(3)+"\n");
+                        stBf.append("Alter: "+erg.getString(3)+"\n");
                         stBf.append("E-Mail Adresse: "+erg.getString(4)+"\n");
                         stBf.append("=============================="+"\n\n");
                     }
